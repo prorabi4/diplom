@@ -1,0 +1,354 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ООО «ЮКО»</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="overlay" id="menuOverlay"></div>
+
+  <div class="header-wrapper" id="headerWrapper">
+    <header class="header container">
+      <div class="logo">
+        <h1>ООО</h1>
+        <img src="./assets/anchor.svg" alt="Якорь" class="anchor" />
+        <h1>ЮКО</h1>
+      </div>
+
+      <button class="burger" id="burgerBtn" aria-label="Открыть меню">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+
+      <nav class="nav" id="navMenu">
+        <a href="#about">О нас</a>        
+        <a href="#works">Наши работы</a>
+        <a href="#feedback">Обратная связь</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </header>
+  </div>
+
+  <section class="hero" id="heroSlider">
+    <div class="slides" id="slidesTrack">
+      <article class="slide active" style="background-image: url('./assets/image_1.png')">
+        <div class="slide-overlay"></div>
+        <div class="text-container container">
+          <h2 class="title">Электромонтажные работы</h2>
+          <p class="description">Электромонтажные работы</p>
+        </div>
+      </article>
+
+      <article class="slide" style="background-image: url('./assets/image_2.png')">
+        <div class="slide-overlay"></div>
+        <div class="text-container container">
+          <h2 class="title">Сборка ЭРУ и автоматики</h2>
+          <p class="description">Мы занимаемся монтажем электроники на судах</p>
+        </div>
+      </article>
+
+      <article class="slide" style="background-image: url('./assets/image_3.png')">
+        <div class="slide-overlay"></div>
+        <div class="text-container container">
+          <h2 class="title">Пусконаладочные работы</h2>
+          <p class="description">Мы строим корабли</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="slider-controls container">
+      <button class="slider-btn" id="prevBtn" aria-label="Предыдущий слайд">‹</button>
+      <div class="dots" id="dots"></div>
+      <button class="slider-btn" id="nextBtn" aria-label="Следующий слайд">›</button>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="info-section" id="about">
+      <h2 class="info-section-header">
+        Компания ООО «ЮКО» имеет признание РМРС, свидетельство РКО и работает на рынке
+        судостроения и судоремонта с 2007 года.
+      </h2>
+
+      <div class="stats-container">
+        <div class="stat-item">
+          <h3 class="stat-title">18 лет</h3>
+          <p class="stat-subtitle">Мы уже совсем взрослые</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="stat-title">15+ проектов</h3>
+          <p class="stat-subtitle">Мы уже очень опытные</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="stat-title">5 регионов</h3>
+          <p class="stat-subtitle">Работаем по всей стране</p>
+        </div>
+      </div>
+
+      <section id="works" class="works-section">
+        <h2 class="works-title">Наши работы</h2>
+        <p class="works-subtitle">Образцы постройки и ремонта судов</p>
+        <div class="grid grid-2" id="works-cards">
+          <article class="card">
+            <img src="./assets/Мухалатка.jpg" alt="Мухалатка" class="card-image" />
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <h3 class="card-title">Мухалатка</h3>
+              <p class="card-description">Электромонтажные работы на вновь строящемся судне 2012-2013 ПР. П52</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="./assets/Единый.jpg" alt="Единый" class="card-image" />
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <h3 class="card-title">Единый</h3>
+              <p class="card-description">Сборка ЭРУ и щитов автоматики 2016-2017 ПР. RSD60</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="./assets/Истра.jpg" alt="Истра" class="card-image" />
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <h3 class="card-title">Истра</h3>
+              <p class="card-description">Электромонтажные работы и щитовая сборка ПР. RST 60</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="./assets/Нарва.jpg" alt="Нарва" class="card-image" />
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <h3 class="card-title">Нарва</h3>
+              <p class="card-description">Электромонтажные работы и щитовая сборка ПР. RST 60</p>
+            </div>
+          </article>
+          <article class="card is-hidden-toggle">
+            <img src="./assets/Марлин 2.jpg" alt="Марлин 2" class="card-image" />
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <h3 class="card-title">Марлин 2</h3>
+              <p class="card-description">Судовые электромонтажные работы</p>
+            </div>
+          </article>
+          <article class="card is-hidden-toggle">
+            <img src="./assets/Язь.jpg" alt="Язь" class="card-image" />
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <h3 class="card-title">Язь</h3>
+              <p class="card-description">Монтаж и настройка оборудования</p>
+            </div>
+          </article>
+          <article class="card is-hidden-toggle">
+            <img src="./assets/ПНС -4.jpg" alt="ПНС-4" class="card-image" />
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <h3 class="card-title">ПНС-4</h3>
+              <p class="card-description">Судовые пусконаладочные работы</p>
+            </div>
+          </article>
+          <article class="card is-hidden-toggle">
+            <img src="./assets/Осокин.jpg" alt="Осокин" class="card-image" />
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <h3 class="card-title">Осокин</h3>
+              <p class="card-description">Электромонтаж и ввод систем в эксплуатацию</p>
+            </div>
+          </article>
+        </div>
+        <div class="works-toggle-wrap">
+          <button class="works-toggle-btn js-toggle-cards" data-target="works-cards" data-more-text="Еще" data-less-text="Скрыть">Еще</button>
+        </div>
+      </section>
+
+      <section id="works2" class="works-section">
+        <p class="works-subtitle">Образцы сборки электрораспределительных щитов</p>
+        <div class="grid grid-3" id="works2-cards">
+          <article class="card panel-card">
+            <img src="./assets/image (1).jpeg" alt="Щит 1" class="card-image" />
+          </article>
+          <article class="card panel-card">
+            <img src="./assets/элщ2.jpg" alt="Щит 2" class="card-image" />
+          </article>
+          <article class="card panel-card">
+            <img src="./assets/image 141.jpeg" alt="Щит 3" class="card-image" />
+          </article>
+          <article class="card panel-card is-hidden-toggle">
+            <img src="./assets/d5lVbofO1D4.jpg" alt="Щит 4" class="card-image" />
+          </article>
+          <article class="card panel-card is-hidden-toggle">
+            <img src="./assets/элщит.jpeg" alt="Щит 5" class="card-image" />
+          </article>
+          <article class="card panel-card is-hidden-toggle">
+            <img src="./assets/элщит3.jpeg" alt="Щит 6" class="card-image" />
+          </article>
+        </div>
+        <div class="works-toggle-wrap">
+          <button class="works-toggle-btn js-toggle-cards" data-target="works2-cards" data-more-text="Еще" data-less-text="Скрыть">Еще</button>
+        </div>
+      </section>
+
+      <section id="works3" class="works-section">
+        <p class="works-subtitle">Образцы электромонтажных работ</p>
+        <div class="grid grid-3" id="works3-cards">
+          <article class="card panel-card">
+            <img src="./assets/первый.jpg" alt="Монтаж 1" class="card-image" />
+          </article>
+          <article class="card panel-card">
+            <img src="./assets/второй.JPG" alt="Монтаж 2" class="card-image" />
+          </article>
+          <article class="card panel-card">
+            <img src="./assets/третий.jpg" alt="Монтаж 3" class="card-image" />
+          </article>
+        </div>
+        <div class="works-toggle-wrap">
+          <button class="works-toggle-btn js-toggle-cards" data-target="works3-cards" data-more-text="Еще" data-less-text="Скрыть">Еще</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="docs-section">
+      <h2 class="docs-title">Лицензии и сертификаты</h2>
+      <div class="grid grid-4 docs-grid">
+        <article class="doc-card"><img src="./assets/0fdf7236-1.jpg" alt="Документ 1" class="doc-image" /></article>
+        <article class="doc-card"><img src="./assets/be31e339-1.jpg" alt="Документ 2" class="doc-image" /></article>
+        <article class="doc-card"><img src="./assets/d11d6f7e-1.jpg" alt="Документ 3" class="doc-image" /></article>
+        <article class="doc-card"><img src="./assets/docses.jpg" alt="Документ 4" class="doc-image" /></article>
+      </div>
+    </section>
+    <section class="feedback-section" id="feedback">
+      <div class="feedback-card">
+        <h2 class="feedback-title">Форма обратной связи</h2>
+        <p class="feedback-subtitle">Оставьте контакты, и мы свяжемся с вами по вашему запросу.</p>
+
+        <form
+          id="feedbackForm"
+          class="feedback-form"
+          action="https://formsubmit.co/ivan.chervinskiy2000@gmail.com"
+          method="POST"
+          novalidate
+        >
+          <div class="feedback-field">
+            <label class="feedback-label" for="feedbackName">Имя</label>
+            <input
+              class="feedback-input"
+              id="feedbackName"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+          <div class="feedback-field feedback-field-hidden" aria-hidden="true">
+            <label class="feedback-label" for="feedbackHoney">Компания</label>
+            <input
+              class="feedback-input"
+              id="feedbackHoney"
+              name="_honey"
+              type="text"
+              autocomplete="off"
+              tabindex="-1"
+            />
+          </div>
+
+          <div class="feedback-field">
+            <label class="feedback-label" for="feedbackEmail">Почта</label>
+            <input
+              class="feedback-input"
+              id="feedbackEmail"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="feedback-field">
+            <label class="feedback-label" for="feedbackPhone">Номер телефона</label>
+            <input
+              class="feedback-input"
+              id="feedbackPhone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              inputmode="tel"
+              placeholder="+7 900 000-00-00"
+              required
+            />
+          </div>
+
+          <div class="feedback-field">
+            <label class="feedback-label" for="feedbackMessage">Сообщение</label>
+            <textarea
+              class="feedback-input feedback-textarea"
+              id="feedbackMessage"
+              name="message"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+
+          <div class="feedback-consent">
+            <input
+              id="feedbackConsent"
+              name="consent"
+              type="checkbox"
+              aria-describedby="feedbackConsentText"
+              required
+            />
+            <span id="feedbackConsentText">
+              Согласен(а) на обработку
+              <a href=".\assets\privacy_policy.pdf" target="_blank" rel="noopener">персональных данных</a>
+            </span>
+          </div>
+
+          <p class="feedback-status" id="feedbackStatus" role="status" aria-live="polite"></p>
+
+          <button class="feedback-submit" type="submit">Отправить</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacts" class="footer">
+    <div class="footer-content container">
+      <div class="logo-section">
+        <img src="./assets/anchor.svg" alt="ЮКО" class="footer-logo" />
+        <span class="company-name">ООО «ЮКО»</span>
+      </div>
+
+      <div class="links-section">
+        <div class="column">
+          <h3 class="footer-title">Контакты</h3>
+          <a href="tel:+70000000000" class="footer-link">+7 000 000-00-00</a>
+          <a href="mailto:ivan.chervinskiy2000@gmail.com" class="footer-link">ivan.chervinskiy2000@gmail.com</a>
+          <p class="address">346720, Ростовская область, Аксай, Промышленная, 2В</p>
+        </div>
+
+        <div class="column">
+          <h3 class="footer-title">Наши работы</h3>
+          <a href="#works" class="footer-link">Постройка и ремонт судов</a>
+          <a href="#works2" class="footer-link">Сборка электрораспределительных щитов</a>
+          <a href="#works3" class="footer-link">Электромонтажные работы</a>
+        </div>
+
+        <div class="column about-column">
+          <h3 class="footer-title">О компании</h3>
+          <p class="about-text">
+            ООО «ЮКО» выполняет полный комплекс электромонтажных работ: от подготовки проектной
+            документации до пусконаладочных и сдаточных испытаний.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js?v=20260506"></script>
+  <script src="./fbform.js?v=20260506"></script>
+</body>
+</html>
