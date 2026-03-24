@@ -14,11 +14,11 @@
 
   <div class="header-wrapper" id="headerWrapper">
     <header class="header container">
-      <div class="logo">
+      <a href="#heroSlider" class="logo" aria-label="Перейти к главному экрану">
         <h1>ООО</h1>
         <img src="./assets/anchor.svg" alt="Якорь" class="anchor" />
         <h1>ЮКО</h1>
-      </div>
+      </a>
 
       <button class="burger" id="burgerBtn" aria-label="Открыть меню">
         <span class="burger-line"></span>
@@ -325,7 +325,7 @@
       <div class="links-section">
         <div class="column">
           <h3 class="footer-title">Контакты</h3>
-          <a href="tel:+70000000000" class="footer-link">+7 000 000-00-00</a>
+          <a href="tel:+70000000000" class="footer-link">+7 988 945-80-36</a>
           <a href="mailto:ivan.chervinskiy2000@gmail.com" class="footer-link">ivan.chervinskiy2000@gmail.com</a>
           <p class="address">346720, Ростовская область, Аксай, Промышленная, 2В</p>
         </div>
@@ -347,6 +347,14 @@
       </div>
     </div>
   </footer>
+
+  <div class="doc-lightbox" id="docLightbox" aria-hidden="true">
+    <button class="doc-lightbox-close" id="docLightboxClose" type="button" aria-label="Закрыть документ">×</button>
+    <figure class="doc-lightbox-content">
+      <img class="doc-lightbox-image" id="docLightboxImage" src="" alt="" />
+      <figcaption class="doc-lightbox-caption" id="docLightboxCaption"></figcaption>
+    </figure>
+  </div>
 
   <script src="./script.js?v=20260506"></script>
   <script src="./fbform.js?v=20260506"></script>
