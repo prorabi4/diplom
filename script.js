@@ -136,3 +136,77 @@ toggleButtons.forEach((button) => {
     button.textContent = expanded ? lessText : moreText;
   });
 });
+
+const docImages = Array.from(document.querySelectorAll('.doc-image'));
+const docLightbox = document.getElementById('docLightbox');
+const docLightboxImage = document.getElementById('docLightboxImage');
+const docLightboxCaption = document.getElementById('docLightboxCaption');
+const docLightboxClose = document.getElementById('docLightboxClose');
+
+function openDocLightbox(image) {
+  if (!docLightbox || !docLightboxImage) {
+    return;
+  }
+
+  docLightboxImage.src = image.src;
+  docLightboxImage.alt = image.alt;
+
+  if (docLightboxCaption) {
+    docLightboxCaption.textContent = image.alt;
+  }
+
+  docLightbox.classList.add('open');
+  docLightbox.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+
+  if (docLightboxClose) {
+    docLightboxClose.focus();
+  }
+}
+
+function closeDocLightbox() {
+  if (!docLightbox || !docLightboxImage) {
+    return;
+  }
+
+  docLightbox.classList.remove('open');
+  docLightbox.setAttribute('aria-hidden', 'true');
+  docLightboxImage.src = '';
+  docLightboxImage.alt = '';
+  document.body.style.overflow = '';
+}
+
+docImages.forEach((image) => {
+  image.tabIndex = 0;
+  image.setAttribute('role', 'button');
+  image.setAttribute('aria-label', `Открыть ${image.alt}`);
+
+  image.addEventListener('click', () => {
+    openDocLightbox(image);
+  });
+
+  image.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openDocLightbox(image);
+    }
+  });
+});
+
+if (docLightbox) {
+  docLightbox.addEventListener('click', (event) => {
+    if (event.target === docLightbox) {
+      closeDocLightbox();
+    }
+  });
+}
+
+if (docLightboxClose) {
+  docLightboxClose.addEventListener('click', closeDocLightbox);
+}
+
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && docLightbox && docLightbox.classList.contains('open')) {
+    closeDocLightbox();
+  }
+});
