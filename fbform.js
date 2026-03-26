@@ -9,7 +9,7 @@ if (feedbackForm) {
   const messageInput = document.getElementById('feedbackMessage');
   const submitButton = feedbackForm.querySelector('button[type="submit"]');
   const statusElement = document.getElementById('feedbackStatus');
-  const namePattern = /^[A-Za-zА-Яа-яЁё]+$/u;
+  const namePattern = /^[A-Za-zА-Яа-яЁё\s]+$/u;
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   const phonePattern = /^\+\d \(\d{3}\) \d{3} \d{2}-\d{2}$/;
   const minMessageLength = 10;
@@ -44,7 +44,7 @@ if (feedbackForm) {
   }
 
   function sanitizeName(value) {
-    return value.replace(/[^A-Za-zА-Яа-яЁё]/gu, '');
+    return value.replace(/[^A-Za-zА-Яа-яЁё\s]/gu, '').replace(/\s{2,}/g, ' ');
   }
 
   function getPhoneDigits(value) {
@@ -104,7 +104,7 @@ if (feedbackForm) {
     return setFieldValidity(
       nameInput,
       isValid,
-      'Имя должно содержать только буквы кириллицы или латиницы.',
+      'Имя должно содержать только буквы кириллицы или латиницы и пробелы.',
       shouldReport,
     );
   }
@@ -142,7 +142,7 @@ if (feedbackForm) {
 
   if (nameInput) {
     nameInput.addEventListener('beforeinput', (event) => {
-      if (event.data && /[^A-Za-zА-Яа-яЁё]/u.test(event.data)) {
+      if (event.data && /[^A-Za-zА-Яа-яЁё\s]/u.test(event.data)) {
         event.preventDefault();
       }
     });
@@ -201,7 +201,7 @@ if (feedbackForm) {
     }
 
     if (!validateName(true)) {
-      setFeedbackStatus('Имя должно содержать только буквы кириллицы или латиницы.', 'error');
+      setFeedbackStatus('Имя должно содержать только буквы кириллицы или латиницы и пробелы.', 'error');
       return;
     }
 
